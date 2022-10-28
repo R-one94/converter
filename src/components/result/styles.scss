@@ -1,0 +1,23 @@
+@use '../../styles/vars';
+
+.rate{
+  background-color: white;
+  text-align: center;
+  color: vars.$main-color;
+  line-height: 1.3em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2.5em;
+  width: 90%;
+  margin: auto;
+  border-top: 1px solid rgb(221, 215, 215);
+
+  &__result{
+    font-weight: bold;
+
+    &__name{
+      text-transform: capitalize;
+      
+    }
+  }
+}

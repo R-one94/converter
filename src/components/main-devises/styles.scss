@@ -1,0 +1,39 @@
+@use '../../styles/vars';
+
+.list{
+  background-color: white;
+  text-align: center;
+  color: vars.$main-color;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+  height: 40vh;
+  overflow: auto;
+
+
+
+
+
+    &>p{
+      font-weight: bold;
+      padding: 1rem;
+      font-size: 1.4em;
+    }
+
+    &__item{
+      padding: 1.02rem;
+      font-size: 1.4em;
+      transition: 1s;
+      border-top: 1px solid vars.$background-color;
+      cursor: pointer;
+      cursor-color:black;
+    }
+
+    &__item:hover{
+      background-color: vars.$background-color;
+      transition: 0.2s;
+    }
+
+    
+    
+}
