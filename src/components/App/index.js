@@ -12,12 +12,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      baseAmount: 1,
+      baseAmount: 0,
       currentCurrency: {
         name: 'Australian Dollar',
         rate: 1.66,
       },
     };
+
+    this.setInputValuebaseAmount = this.setInputValuebaseAmount.bind(this);
+  }
+
+  setInputValuebaseAmount(newValue) {
+    this.setState({
+      baseAmount: Number(newValue),
+    });
   }
 
   render() {
@@ -36,7 +44,7 @@ class App extends React.Component {
     const convertedAmount = calculDuMontantDeConversion();
     return (
       <div className="app">
-        <Header baseAmount={baseAmount} />
+        <Header baseAmount={baseAmount} setInputValuebaseAmount={this.setInputValuebaseAmount} />
         <MainDevise data={data} HandleClick={HandleClick} />
         <Result currencyName={currentCurrency.name} convertedAmount={convertedAmount} />
 
