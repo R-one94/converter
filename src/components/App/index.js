@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      baseAmount: 0,
+      baseAmount: '',
       currentCurrency: {
         name: 'Australian Dollar',
         rate: 1.66,
@@ -24,7 +24,7 @@ class App extends React.Component {
 
   setInputValuebaseAmount(newValue) {
     this.setState({
-      baseAmount: Number(newValue),
+      baseAmount: newValue,
     });
   }
 
@@ -39,7 +39,7 @@ class App extends React.Component {
 
     const { baseAmount, currentCurrency } = this.state;
 
-    const calculDuMontantDeConversion = () => baseAmount * currentCurrency.rate;
+    const calculDuMontantDeConversion = () => Number(baseAmount) * currentCurrency.rate;
 
     const convertedAmount = calculDuMontantDeConversion();
     return (
